@@ -1,0 +1,5 @@
+import { Watch } from './Watch';
+import { productDetails } from '@/data/productDetails';
+export function ProductDetails() {
+  return <section id="details" className="details-section" aria-labelledby="details-title"><div className="details-stage"><div className="details-head"><p className="eyebrow">02 / АРХИТЕКТУРА ВРЕМЕНИ</p><h2 id="details-title">Притяжение<br />в деталях.</h2></div><div className="details-watch"><div className="detail-orbit" /><Watch /></div><div className="detail-panels">{productDetails.map((detail, index) => <article className="detail-panel" key={detail.number} data-detail={index}><span className="detail-number">{detail.number}<span> / 04</span></span><p className="eyebrow">{detail.subtitle}</p><h3>{detail.title}</h3><p>{detail.text}</p><svg viewBox="0 0 1000 700" className="detail-connector" aria-hidden="true"><path d={`M315 440H440L${detail.target[0] * 10} ${detail.target[1] * 7}`} /><circle cx={detail.target[0] * 10} cy={detail.target[1] * 7} r="4" /></svg></article>)}</div><div className="detail-bottom eyebrow" aria-hidden="true"><span>ОБЪЕКТ ИССЛЕДОВАНИЯ / MODEL 01</span><span>ПРОКРУТИТЕ ДАЛЬШЕ ↓</span></div></div></section>;
+}
