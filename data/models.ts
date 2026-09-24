@@ -1,5 +1,4 @@
 export const models = [
-  { id: '01', name: 'MODEL 01', image: '/assets/model-01.webp', motif: 'Человек и бесконечность', description: 'Фигура космонавта на глубоком синем фоне. Маленькая вселенная, к которой хочется возвращаться взглядом.', reference: null, price: null, editionSize: null },
-  { id: '02', name: 'MODEL 02', image: '/assets/model-02.webp', motif: 'Взгляд с другой орбиты', description: 'Космический аппарат, рельеф поверхности и далёкая Земля. Другой ракурс одной большой истории.', reference: null, price: null, editionSize: null },
+  { id: '01', name: 'MODEL 01', image: '/assets/concept-01.webp', motif: 'Своя орбита', description: 'Холодное серебро, глубокий синий и тонкие линии орбит. Взгляд движется по циферблату, открывая собственную карту неба.' },
+  { id: '02', name: 'MODEL 02', image: '/assets/concept-02.webp', motif: 'Обратная сторона', description: 'Графитовая тишина и серебристый лунный рельеф. Единственный тёплый акцент — тонкая медная стрелка.' },
 ] as const;
-export const collection = { name: null, releaseDate: null, editionSize: null, shopUrl: 'https://cosmos-watches.ru/' };

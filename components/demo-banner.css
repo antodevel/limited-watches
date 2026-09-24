@@ -1,0 +1,117 @@
+:root {
+  --demo-banner-height: 44px;
+  --demo-banner-offset: 0px;
+}
+
+:root[data-demo-banner='visible'] {
+  --demo-banner-offset: var(--demo-banner-height);
+}
+
+.demo-banner {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  width: 100%;
+  min-height: var(--demo-banner-height);
+  padding: 8px 18px;
+  box-sizing: border-box;
+  background: #229ed9;
+  color: #fff;
+  box-shadow: 0 8px 28px rgb(11 16 19 / 13%);
+}
+
+.demo-banner a {
+  grid-column: 2;
+  color: inherit;
+  font:
+    400 13px/1.35 Arial,
+    Helvetica,
+    sans-serif;
+  letter-spacing: 0.01em;
+  text-align: center;
+  text-decoration: none;
+  text-underline-offset: 3px;
+}
+
+.demo-banner a:hover {
+  text-decoration: underline;
+}
+
+/* The whole strip is a link; the close button stays independently clickable. */
+.demo-banner a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.demo-banner strong {
+  font-weight: 700;
+}
+
+.demo-banner button {
+  position: relative;
+  z-index: 1;
+  grid-column: 3;
+  justify-self: end;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.demo-banner button:hover {
+  background: rgb(255 255 255 / 14%);
+}
+
+.demo-banner button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.demo-banner svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+
+/* Добавьте класс site-header своей фиксированной шапке. */
+:root .site-header {
+  top: var(--demo-banner-offset);
+  transition: top 0.35s ease;
+}
+
+@media (max-width: 760px) {
+  :root {
+    --demo-banner-height: 48px;
+  }
+
+  .demo-banner {
+    grid-template-columns: 28px 1fr 28px;
+    padding: 7px 10px;
+  }
+
+  .demo-banner a {
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root .site-header,
+  .demo-banner button {
+    transition: none;
+  }
+}

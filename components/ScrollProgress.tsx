@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-const chapters = [{ id: 'intro', name: 'Начало' }, { id: 'history', name: 'История' }, { id: 'details', name: 'Детали' }, { id: 'collection', name: 'Модели' }, { id: 'limited', name: 'Серия' }];
+const chapters = [{ id: 'intro', name: 'Начало' }, { id: 'history', name: 'История' }, { id: 'details', name: 'Детали' }, { id: 'collection', name: 'Модели' }, { id: 'limited', name: 'Вне времени' }];
 export function ScrollProgress() {
   const [active, setActive] = useState('intro');
   useEffect(() => {
